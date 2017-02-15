@@ -10,7 +10,7 @@ $html = scraperWiki::scrape( $url );
 
 $dom = new simple_html_dom();
 $dom->load($html);
-foreach($dom->find("div[@class='news-box case-25']/div/a/@href") as $data){
+foreach($dom->find("tr") as $data){
     echo "a<br>";
 }
 
