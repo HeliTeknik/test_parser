@@ -11,7 +11,7 @@ $html = scraperWiki::scrape( $url );
 $dom = new simple_html_dom();
 $dom->load($html);
 foreach($dom->find("div[@class='news-box case-25']/div/a/@href") as $data){
-    echo "$data<br>";
+    echo "a<br>";
 }
 
 
