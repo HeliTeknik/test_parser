@@ -1,27 +1,118 @@
-<?
-// This is a template for a PHP scraper on morph.io (https://morph.io)
-// including some code snippets below that you should find helpful
-
-// require 'scraperwiki.php';
-// require 'scraperwiki/simple_html_dom.php';
-//
-// // Read in a page
-// $html = scraperwiki::scrape("http://foo.com");
-//
-// // Find something on the page using css selectors
-// $dom = new simple_html_dom();
-// $dom->load($html);
-// print_r($dom->find("table.list"));
-//
-// // Write out to the sqlite database using scraperwiki library
-// scraperwiki::save_sqlite(array('name'), array('name' => 'susan', 'occupation' => 'software developer'));
-//
-// // An arbitrary query against the database
-// scraperwiki::select("* from data where 'name'='peter'")
-
-// You don't have to do things with the ScraperWiki library.
-// You can use whatever libraries you want: https://morph.io/documentation/php
-// All that matters is that your final data is written to an SQLite database
-// called "data.sqlite" in the current working directory which has at least a table
-// called "data".
+<?php
+require 'scraperwiki.php';
+require 'scraperwiki/simple_html_dom.php';
+$html_content = scraperwiki::scrape("http://www.whatstove.co.uk/advanced-stove-search/search-results/?criteria=2&jr_okforsmokelesszone=1&order=alpha&query=any/");
+$html = str_get_html($html_content);
+foreach($html->find("div.jr_tableview a") as $data){
+    #print $data . "\n";
+    $pos = strpos ( $data->href , '#' );
+#    if ( $pos === FALSE ) {
+#        print $data->href . "\n";
+#        NULL;}
+    if ( $pos === FALSE ) {
+            $record = array( 'link' =>$data->href);
+            scraperwiki::save(array('link'), $record); 
+            #print json_encode($record) . "\n";
+        NULL;
+        }
+}
+$html_content = scraperwiki::scrape("www.whatstove.co.uk/advanced-stove-search/search-results/?criteria=2&jr_okforsmokelesszone=1&order=alpha&page=2&query=any");
+$html = str_get_html($html_content);
+foreach($html->find("div.jr_tableview a") as $data){
+    $pos = strpos ( $data->href , '#' );
+    if ( $pos === FALSE ) {
+            $record = array( 'link' =>$data->href);
+            scraperwiki::save(array('link'), $record);
+            #print json_encode($record) . "\n";
+        NULL;
+        }
+}
+$html_content = scraperwiki::scrape("www.whatstove.co.uk/advanced-stove-search/search-results/?criteria=2&jr_okforsmokelesszone=1&order=alpha&page=3&query=any");
+$html = str_get_html($html_content);
+foreach($html->find("div.jr_tableview a") as $data){
+    $pos = strpos ( $data->href , '#' );
+    if ( $pos === FALSE ) {
+            $record = array( 'link' =>$data->href);
+            scraperwiki::save(array('link'), $record);
+            #print json_encode($record) . "\n";
+        NULL;
+        }
+}
+$html_content = scraperwiki::scrape("www.whatstove.co.uk/advanced-stove-search/search-results/?criteria=2&jr_okforsmokelesszone=1&order=alpha&page=4&query=any");
+$html = str_get_html($html_content);
+foreach($html->find("div.jr_tableview a") as $data){
+    $pos = strpos ( $data->href , '#' );
+    if ( $pos === FALSE ) {
+            $record = array( 'link' =>$data->href);
+            scraperwiki::save(array('link'), $record);
+            #print json_encode($record) . "\n";
+        NULL;
+        }
+}
+$html_content = scraperwiki::scrape("www.whatstove.co.uk/advanced-stove-search/search-results/?criteria=2&jr_okforsmokelesszone=1&order=alpha&page=5&query=any");
+$html = str_get_html($html_content);
+foreach($html->find("div.jr_tableview a") as $data){
+    $pos = strpos ( $data->href , '#' );
+    if ( $pos === FALSE ) {
+            $record = array( 'link' =>$data->href);
+            scraperwiki::save(array('link'), $record);
+            #print json_encode($record) . "\n";
+        NULL;
+        }
+}
+$html_content = scraperwiki::scrape("www.whatstove.co.uk/advanced-stove-search/search-results/?criteria=2&jr_okforsmokelesszone=1&order=alpha&page=6&query=any");
+$html = str_get_html($html_content);
+foreach($html->find("div.jr_tableview a") as $data){
+    $pos = strpos ( $data->href , '#' );
+    if ( $pos === FALSE ) {
+            $record = array( 'link' =>$data->href);
+            scraperwiki::save(array('link'), $record);
+            #print json_encode($record) . "\n";
+        NULL;
+        }
+}
+$html_content = scraperwiki::scrape("www.whatstove.co.uk/advanced-stove-search/search-results/?criteria=2&jr_okforsmokelesszone=1&order=alpha&page=7&query=any");
+$html = str_get_html($html_content);
+foreach($html->find("div.jr_tableview a") as $data){
+    $pos = strpos ( $data->href , '#' );
+    if ( $pos === FALSE ) {
+            $record = array( 'link' =>$data->href);
+            scraperwiki::save(array('link'), $record);
+            #print json_encode($record) . "\n";
+        NULL;
+        }
+}
+$html_content = scraperwiki::scrape("www.whatstove.co.uk/advanced-stove-search/search-results/?criteria=2&jr_okforsmokelesszone=1&order=alpha&page=8&query=any");
+$html = str_get_html($html_content);
+foreach($html->find("div.jr_tableview a") as $data){
+    $pos = strpos ( $data->href , '#' );
+    if ( $pos === FALSE ) {
+            $record = array( 'link' =>$data->href);
+            scraperwiki::save(array('link'), $record);
+            #print json_encode($record) . "\n";
+        NULL;
+        }
+}
+$html_content = scraperwiki::scrape("www.whatstove.co.uk/advanced-stove-search/search-results/?criteria=2&jr_okforsmokelesszone=1&order=alpha&page=9&query=any");
+$html = str_get_html($html_content);
+foreach($html->find("div.jr_tableview a") as $data){
+    $pos = strpos ( $data->href , '#' );
+    if ( $pos === FALSE ) {
+            $record = array( 'link' =>$data->href);
+            scraperwiki::save(array('link'), $record);
+            #print json_encode($record) . "\n";
+        NULL;
+        }
+}
+$html_content = scraperwiki::scrape("www.whatstove.co.uk/advanced-stove-search/search-results/?criteria=2&jr_okforsmokelesszone=1&order=alpha&page=10&query=any");
+$html = str_get_html($html_content);
+foreach($html->find("div.jr_tableview a") as $data){
+    $pos = strpos ( $data->href , '#' );
+    if ( $pos === FALSE ) {
+            $record = array( 'link' =>$data->href);
+            scraperwiki::save(array('link'), $record);
+            #print json_encode($record) . "\n";
+        NULL;
+        }
+}
 ?>
