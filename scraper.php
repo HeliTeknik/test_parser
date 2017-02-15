@@ -10,8 +10,8 @@ $html = scraperWiki::scrape( $url );
 
 $dom = new simple_html_dom();
 $dom->load($html);
-foreach($dom->find("tr") as $data){
-    echo "a<br>";
+foreach($dom->find("news-box case-25") as $data){
+    print_r($data);
 }
 
 
