@@ -10,7 +10,7 @@ $html = scraperWiki::scrape( $url );
 
 $dom = new simple_html_dom();
 $dom->load($html);
-foreach($dom->find("div[class='columnist-name']") as $data){
+foreach($dom->find("div[class='cas-inner']/a") as $data){
     print_r($data);
 }
 
