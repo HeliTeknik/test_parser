@@ -5,12 +5,12 @@ require 'scraperwiki.php';
 
 
 <?php
-$url="http://web.archive.org/web/20110514112442/http://unstats.un.org/unsd/demographic/products/socind/education.htm";
+$url="http://www.sozcu.com.tr/kategori/yazarlar/";
 $html = scraperWiki::scrape( $url );
 
 $dom = new simple_html_dom();
 $dom->load($html);
-foreach($dom->find("div[class='news-box]'") as $data){
+foreach($dom->find("div[class='news-box case-25]'") as $data){
     print_r($data);
 }
 
